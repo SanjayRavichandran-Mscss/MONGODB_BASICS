@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB (PART-1)</title>
+<style>
+    li{
+            font-size:30px;
+    }
+</style>
+
+</head>
+<body>
+        <h1 style="color:red;text-align:center;font-style:italic;font-family:cursive">TUTOR JOE'S STANLEY</h1>
+        <div style="text-align:center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/KD-2vh9v1co?si=jtEYB2KRgcz9ru2d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+
+    <h1>What is MongoDB?</h1>
+    <li>MongoDB is a popular <b>open-source NoSQL database</b> that stores the data in<b> document oriented format. </b>Unlike traditional Relational databases, which stores data in tables. </li>
+    <li>MongoDB stores a data as </b>json-like documents </b>, Making it more <b>flexible and scalable. </b></li>
+    <li>The name <b>"MongoDB"</b> is derived from the word<b> "humonguous"(very large)</b></li>
+    <li><b>BSON(Binary Script Object Notation) documents</b> are the format used for data stored in MongoDB</li>
+    <h1>History of MongoDB :</h1>
+    <li>MongoDb is a <b>NoSQL database </b>that was developed by <b>10gen.</b></li>
+    <li>10gen company was founded by <b>Dwight Merriman and Eliot Horowitz</b> in <b>2007</b></li>
+    <li>The <b>first version</b> of MongoDb was released in <b>2009</b> and it is quickly gained popularity among developers due to its easy of use , <b>scalabilty</b> and <b>flexibility.</b></li>
+    <li>In 2013 ,<b>10gen Changed its name to MongoDB Inc.</b> to better reflect its focus on the development of the MongoDB database</li>
+    <li>In 2017 , MongoDB Inc. went public, and the company has continued to grow and expand its offerings , including te intoduction of a <b>cloud-based database service called MongoDB Atlas.</b></li>
+    <li>Today MongoDb is used by a wide range of companies and organizations.</li>
+    <h1><b>JSON</b>(JavaScript Object Notation) Data Format :</h>
+        <p>
+                {                               <br>
+                "name":"sanjay" ,                 <br>
+                "age":19,                            <br>
+                "gender":"male",                         <br>
+                "married":false,                         <br>
+                "address": {                                 <br>
+                    "street":"UTroad",                           <br>
+                    "city":"coimbatore",                             <br>
+                    "state":"TamilNadu"                                  <br>
+                },                                                       <br>
+                "hobbies":[                                       <br>      
+                {                                                     <br>
+                    "name" :"cooking"                                 <br>
+                },                                                       <br>
+
+                {                                                    <br>
+                    "name":"sports"                                 <br>
+                }                                                   <br>
+                ]                                                   <br>
+             }                                                       <br>
+
+        </p>
+
+        <h1>MongoDb Features</h1>
+        <li> <b>Aggregation</b> is a Powerful feature n mongoDB that allows you to process and analyze data across multiple documents in a collections. It Enables you to perform complex data manipulation , transformation and calculation on large datasets
+       <br><b>input -->$match-->$group-->$sort -->output</b></li>
+<br>
+       <li>MongoDb is a<b>Schema-less database,</b>which means that is does not require a pre-defined schema or structure for the data. Unlik traditional relational databases, where data is stored in tables with pre-defined column and  relationship between tables, MongoDB stores data in flexible and dynamic documents.</li>
+<br>
+
+<li>MongoDB is a <b>document-oriented</b> this means that data is stored in the form of documents, which are similar to JSON(JavaScript Object Notation) objects,instead of being stored in tables with fixed column and rows like  in a traditional relational databases. Each document has  unique system generated key.</li>
+<li><b>Sharding</b>allows mongoDB to handle large datasets and high traffic loads while maintaining high performance and scalability<br>sharding is a type of <b>database portioning</b> that separates very large databases into smaller faster more easily managed part called data shards.</li>
+<li><b>Indexing</b>  is  one of the important option to improve the search performance. so we should index those fields which are matched  with our searching criteria.</li>
+<li><b>High performance</b> MongoDB shows high availability and scalability, It has better query response for indexing and replication</li>
+<li><b>Replication : </b> A Replica set  in MongoDB consists of <b>one primary node and one or more secondary nodes</b> , which Replicate the data from the primary node and can handle the read-operation. If the primary node fails , <b>one of the secondary node elected as the new primary node</b></li>
+
+<br>
+<h1>Terms You need to know in MongoDB :</h1>
+
+<li>Array</li>
+<li>Embedded Document</li>
+<li>Array of Embedded Document</li>
+<li>Nested Embedded Document</li>
+
+<h2>Array :</h2>
+<li>Array is a Collection of Data.It containing of Index and its value.</li>
+<p>
+[                           <br>
+"Technology",<br>
+"Programming",<br>
+"Web Development"<br>
+]<br>
+<table style="border:2px solid black; border-collapse:collapse;padding:10px;">
+<tr >
+    <th style="border:2px solid black">Index</th>
+    <td style="border:2px solid black">0</td>
+    <td style="border:2px solid black">1</td>
+    <td style="border:2px solid black">2</td>
+</tr>
+
+<tr>
+    <th style="border:2px solid black">Value</th>
+    <td style="border:2px solid black">Technology</td>
+    <td style="border:2px solid black">Programming</td>
+    <td style="border:2px solid black">Web Development</td>
+</tr>
+</table>
+</p>
+
+<h2>Embedded Document :</h2>
+<li>Embedded Document consist of field(key) and its Value within the curly braces.</li>
+<p>
+    {  <br>
+            "name" : "sanjay",<br>
+            "email":"sanjay@gmail.com"<br>
+}  <br>
+<li>Here <b>name is a Field(key)</b> and <b>sanjay is a value</b></li>
+<li><b>email is a Field(key)</b> and <b>sanjay@gmail.com is a value</b> </li>
+</p>
+<h1>Array of Embedded document</h1>
+<li>We can store the multiple Embedded Document in the Array <b>is Known as Array of Embedded document</b></li>
+<p>
+[
+{"user":"Alice" , "comment":"Great post!"},
+{"user":"Bob" , "comment": "I learned a lot."}
+]
+<li>Here , within curly brace is a Embedded Document and it contained in the array[]</li>
+</p>
+
+<h1>Nested Embedded Document</h1>
+<li >Here , The Array consists of Embedded Document and <b>the Embedded document consists of another Embedded Document</b> which is known as Nested Embedded Document </li>
+<p>
+[  <br>
+{   <br> 
+"user":"Alice",   <br>
+"comment":"Great post!",  <br>
+"replies":[   <br>
+{"user":"Charlie","comment":"I Agree"},  <br> 
+{"user":"David","comment":"Tell me more"},   <br>
+{"user":"Dark","comment":"Exciting"}  <br>
+]  <br>
+}   <br>
+]   <br>
+
+</p>
+
+
+<hr style="height:15px;background-color:green">
+
+<h1> _id: ObjectId('657fbf53c1ad6b0275ddf418')</h1>
+<h3>The _id is a primary key in MongoDB , which is automatically created and also we can create manually, if we can create the _id manually Ensure that is not duplicate the _id suppose duplicate _id is occur it is make a error and issue.</h3>
+
+<h1>show databases  (or)  show dbs</h1>
+<h3>This command for show all databases </h3>
+<h3>The default databases are <mark> admin , config , local </mark>these are are already exist in databases</h3>
+
+<h1>use database_name (use school)</h1>
+<h3>Here above ,the <mark>school is a database name.</mark></h3>
+<h3>This command performs  switched to our database(ie., school) if it is already exist , If it is not exist it will create a new database as school </h3>
+<h3>The created database stored in temporary memory till we store atleast one collections in the database. </h3>
+<h3>If no collection is stored in the database , It will not display in the database list in compass and also it will automatically delete. </h3>
+<h3>so, we must create atleast one collection per database.</h3>
+<h3>Mongosh : <mark>switched to db school</mark></h3>
+
+<h1>show collections (or) show tables</h1>
+<h3>This command performs to <mark>show all the collections </mark>in a databases.</h3>
+<h3>If no collections are there it will empty</h3>
+
+<h1>db.collection_name.insertOne({"name":"pen"})  ie., <mark>db.products.insertOne({"name":"pen"})</mark></h1>
+<h3>The above is the syntax for insert the collections in a database.</h3>
+<h3>Here above , <mark>products is a collection(table) name.</mark></h3>
+
+<h1>db.collection_name.drop() ie., <mark>db.products.drop()</mark></h1>
+<h3>The above syntax is for delete the collection in a database.</h3>
+<h3><mark>Important note :</mark> Once you delete the collection, you will never recover the collection. </h3>
+
+<h1>cls</h1>
+<h3>This command is for clear the screen</h3>
+
+<h1>db.collection_name.find()</h1>
+<h3>This command is used to<mark> show the documents </mark>in the collections.</h3>
+
+<h1>db.products.insertMany<mark>([</mark>{"_id":1,"name":"banana"},{"_id":"2","name":"orange"},{"_id":"3","name":"papaya"}<mark>])</mark></h1>
+<h3>Here , we can use array to store the multiple records in a collection.</h3>
+
+<h1>{ordered:false}</h1>
+<h3>Normally ,In  _id , duplicate has occur it cannot insert the records from after the duplicate _id.</h3>
+<h3>So we can specify the above code <mark>{ordered:false}</mark> ,It performs to false the order. which means,<mark>The duplicate _id and its record only not inserted</mark>  but except the duplicate _id all are to be inserted. </h3>
+<h3>Below is the method to specify {ordered:false}</h3>
+<h3>
+
+
+</h3>
+
+<h1> db.PRODUCTS.find({"brand":"oneplus"})</h1>
+<h3>Here above is the syntax for filter the records by using of <mark>field("brand") and its value("oneplus").</mark></h3>
+<h3>like this , we can filter any documents by using the <mark>KEY : VALUE</mark></h3>
+
+<h1>db.PRODUCTS.find({"brand":{$in:["apple","realme"]}})</h1>
+<h3>Here ,we can filter the <mark>multiple documents </mark>by using of the above syntax.</h3>
+
+<h1>db.PRODUCTS.find({"category":"mobile","qty":{$lt:20}})</h1>
+<h3>The above syntax is for filter the documents with <mark>different KEY name</mark> ie., category , qty.</h3>
+<h3>Here Above , <mark>Check both the field and filter matching result and then Execute the Result</mark></h3>
+<h3>In the above syntax , <mark>we dont want to specify any query operator or array bracket</mark> , but we must specify in or gate.</h3>
+
+<h1> db.PRODUCTS.find({  <br>
+    $or:  <br>
+    [<br>
+    {"category":"mobile"},<br>
+    {"price":{$lt:10000}},<br>
+    {"display":{$lt:10}} <br>
+    ] <br>
+    })</h1>
+<h3>In the above syntax if any <mark>one of the field(KEY) is satisfy</mark> then It executes the corresponding result.</h3>
+<h3>Here, we must specify <mark>$or:</mark> and also <mark>array bracket [].</mark></h3>
+<h3><mark>$lt means less than</mark></h3>
+
+<h1>
+    db.PRODUCTS.find({<br>
+        "category":"mobile",<br>
+        $or <br>
+        [ <br>
+        {"qty":{$lt:10}},<br>
+        "title":/^r/<br>
+        ] <br>
+    }) <br>
+</h1>
+
+<h3>Here , above is the syntax for <mark>use AND gate as well as OR gate</mark> to filter the documents based on the above AND & OR conditions.</h3>
+<h3><mark>/^r/</mark> is used to check if starting letter is r.</h3>
+<h3>Instead of /^r/  we can also use <mark>{$regex:'^r'}</mark></h3>
+<h2><mark>"title":/^r/<br></mark> we can also use <mark>{"title":{$regex:'^r'}}</mark></h2>
+<h2>$regex stands for <mark>Regular Expression.</mark></h2>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB(PART-2)</title>
+    <style>
+        li{
+                font-size:30px;
+        }
+    </style>
+</head>
+<body>
+   <h1 style="color:red;font-style:italic;font-family:cursive;text-align:center;text-transform:uppercase ">Balachandra</h1>
+   <div  style="text-align:center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/CKaywM2qXpo?si=61uaroMs7Jp372aB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<br>
+<h1>show database (or) show dbs</h1>
+<li>This command is for show all the databases.</li>
+
+<h1>use database_name   i., use products</h1>
+<li>This command is for switch to the database.</li>
+
+
+<h1>exit</h1>
+<li>exit the MongoDB</li>
+
+<h1>cls</h1>
+<li>cls for clear the screen.</li>
+
+<h1 style="color:green;">MongoDB Database can contain one or more Collections.</h1>
+<h1 style="color:green;">Collections can contain different types of document(object).</h1>
+<h1 style="color:green;">Document - Key value pair list or array or nested document.</h1>
+
+<h1>db.collection_name.find()  (ie., db.users.find()).</h1>
+<li>Read all the documents and show the documents with id.</li>
+
+<h1>db.users.find().limit(2)</h1>
+<li>The above command is for limit the collections.</li>
+<li>Here ,First Two collections only display , because we can use <mark>limit(2)</mark></li>
+
+<h1>db.users.find().<mark>sort({name : 1})</mark></h1>
+<li>This command is used to  sort the collections via document.</li>
+<li>documents like field name(ie., name) only not value.</li>
+<li>The above command sort in Ascending order. Because we can use 1 <mark>{name : 1}.</mark> </li>
+<li>Suppose we have sort in <b><mark>descending order</mark></b> we have to use -1 <mark>{name : -1}</mark></li>
+<li>In this command we must use find() then only the sort() is work otherwise not work because we need to read the collections first then only we can sort. </li>
+<h4>in the sorting technique It sort from<mark>small letters(a,b,c,...) </mark> , It gives the high priority for small letters in Ascending order.</h4>
+<h1>db.users.find().sort({name:-1 , age :1})</h1>
+<li>This command is  sort with more than one conditions.</li>
+
+<h1>field name <mark>:1 </mark>[ie., name :1]</h1>
+<li>The value 1 is sort in Ascending order.</li>
+
+<h1>field name <mark>:-1 </mark>[ie., name :-1]</h1>
+<li>The value -1 is sort in Descending order.</li>
+
+<h1>db.users.find().limit(4).skip(2)</h1>
+<li>Here , It can display four documents <mark>except first two documents</mark> , because we use skip(2) . </li>
+
+<h1>db.users.find({"age":24})  , <br>db.users.find({"name":"joes"})</h1>
+<li>This command is used to fetch the particular document by using any field name like name , age ,  etc..</li>
+
+<h1>db.users.find({"name":"dark"},<mark>{name:1,age:1}</mark>)</h1>
+<li>Here, the above command is display the particular field and its value in the document which is we have mentioned in the command <mark>{name:1,age:1}</mark>.  </li>
+
+<h1>_id:0</h1>
+<li> The<mark>_id </mark> is display as default.</li>
+<li>suppose, we dont want to display the _id , we can use <mark>_id:0</mark> </li>
+<h1><mark>_id:1</mark> is display the _id. <br> <mark>_id:0</mark> is hide the _id.</h1>
+
+<h1>db.users.find({"name":"dark"},{age:0})</h1>
+<li>The above command is display the fields <mark>except age , because {age:0}.</mark></li>
+
+<p style="color:rgb(100, 0, 3); font-size:1cm;">Complex Queries :</p>
+<h1 style="color:darkblue;">$eq - equal</h1>
+<h1>db.users.find({"name":<mark>{$eq:"dark"}</mark>})</h1>
+<li>The above command is used to fetch the field name which is <mark>Equal to te value.</mark> </li>
+
+<h1 style="color:darkblue;">$ne - NotEqual</h1>
+<h1>db.users.find({"name":<mark>{$ne:"dark"}</mark>})</h1>
+<li>The above command is used to fetch all the documents<mark>except the name "dark</mark> </li>
+<li>Because , we can use <mark>{$ne:"dark"}</mark></li>
+
+
+<h1 style="color:darkblue;">$lt - LessThan</h1>
+<h1>db.users.find({"age":<mark>{$lt:29}</mark>})</h1>
+<li>The above is the command for lessThan condition</li>
+
+<h1 style="color:darkblue;">$lte - LessThan Or EqualTo</h1>
+<h1>db.users.find({"age":<mark>{$lte:29}</mark>})</h1>
+<li>The above is the command for<mark> less than or Equal to </mark>condition.</li>
+
+
+<h1 style="color:darkblue;">$gt - GreaterThan</h1>
+<h1>db.users.find({"age":<mark>{$gt:21}</mark>})</h1>
+<li>This command is used to check the <mark>greater than</mark> condition.</li>
+
+
+<h1 style="color:darkblue;">$gte - GreaterThan or EqualTo</h1>
+<h1>db.users.find({"age":<mark>{$gte:21}</mark>})</h1>
+<li>This command is used to check the condition as <mark>greater than or Equal to .</mark></li>
+
+
+<h1 style="color:darkblue;">$in - Whether the value is <mark>in the collections</mark> or not.</h1>
+<h1>db.users.find({"name":<mark>{$in:</mark>["dark","varun","antony"]}})</h1>
+<li>Here above, check if the <mark>given value is in the collections or not</mark> , If the value is in the collections then it displays the corresponding collections.</li>
+
+<h1 style="color:darkblue;">$nin - It display all the document in collections<mark> except the given value in $nin</mark></h1>
+<h1>db.users.find({"name":<mark>{$nin:</mark>["dark","varun"]}})</h1>
+<li>Here , The above command is display all the document in collections <mark>Except "dark" , "varun" </mark> , because The both are given <mark>$nin </mark>.</li>
+
+<h1 style="color:darkblue;">$exists:true - It displays the document If the given field name is exists in the document. field name like age,name,city , etc..</h1>
+<h1>db.users.find({age:<mark>{$exists:true}</mark>})</h1>
+<li>Here above the command is display the document with the<mark> fieldName(age).</mark></li>
+
+<h1 style="color:darkblue;">$exists:false - It displays the document If the given field name is not exists in the document. field name like age,name,city , etc..</h1>
+<h1>db.users.find({age:<mark>{$exists:false}</mark>})</h1>
+<li>Here above the command is display the document without the<mark> fieldName(age).</mark></li>
+<li>The <mark>$exists only check the property like age , name , city</mark> not its value</li>
+
+<h1>db.users.find({age:<mark>{$gte:21,$lte:30}</mark>})</h1>
+<li>We can also use multiple complex queries.</li>
+
+<h1>db.users.find({<mark>age:</mark>{$gte:21,$lte:30} , <mark>"name":</mark>"dark"})</h1>
+<h1>The above is<mark> AND GATE.</mark> because the both conditions are true then it display the result.</h1>
+<li>But , here we cannot mention $and ,because we dont want to <mark>mention AND in AND gate.</mark></li>
+<li>we can also use <mark>multiple properties</mark> like name , age , city.</li>
+
+
+<h1 style="color:darkblue;">$and - It display the document which is satisfies both the condition.</h1>
+<h1>db.users.find({<mark>$and:</mark>[{"name":"dani"},{age:30}]})</h1>
+<li>Here we can mention the <mark>$and</mark> .</li>
+
+<h1 style="color:darkblue;">$or - It display the document which is satisfies one of all the condition.</h1>
+<h1>db.users.find({<mark>$or:</mark>[{"name":"dani"},{age:30}]})</h1>
+<li>Here we can mention the <mark>$or</mark> .</li>
+<li>We must mention the <mark>$or</mark> in OR gate.</li>
+
+<h1 style="color:darkblue;">$not -It display all the document <mark>except the document which can be use $not</mark></h1>
+<h1>db.users.find({<mark>$not:</mark>[{"name":"dani"},{age:30}]})</h1>
+<li>Here we can mention the <mark>$not</mark> .</li>
+
+<h1 style="color:darkblue;">$expr - This complex query is used to compare both the property.</h1>
+
+<h1>db.users.find({$expr:{$gt:["$rollno","$age"]}})</h1>
+<li>The above command is used to <mark>compare both the properties</mark> and display the result.</li>
+<li>Here ,check whether the rollno is greater then age or not.</li>
+
+<h1>db.users.find({<mark>"address.city":</mark>"New york City"})</h1>
+<li>This command is used to fetch the values in <mark>nested document.</mark> so we can <mark>use dot(.) , address.city</mark></li>
+
+<h1 style="color:darkblue;">db.users.countDocuments()</h1>
+<li>This command is used to <mark>count</mark> the total document or any particular document with expressions.</li>
+
+<h1>db.users<mark>.updateOne</mark>({age:29} ,<mark>{$set:{age:9}}</mark>)</h1>
+<h1>db.users<mark>.updateOne</mark>({  _id: ObjectId('65840e80267f02de770fa4e0')},<mark> {$set :{"name":"keerthi"}}</mark>)</h1>
+<li>The above is the command for <mark>update the value</mark> in a document.</li>
+<li>Here we can modify only one value.</li>
+<li>mostly , we must<mark> use the _id</mark> of particular document , because It dont make any confuse..</li>
+
+
+<h1 style="color:darkblue;">$inc  - Increment</h1>
+<h1>db.users.updateOne({_id: ObjectId('65841947267f02de770fa4e2')} , <mark>{$inc : 5}</mark>)</h1>
+<li>The above command is used to <mark>ncrement </mark>ithe value.</li>
+
+<h1 style="color:darkblue;">$rename  - Rename the property name (field name)</h1>
+<h1>db.users.updateOne({_id: ObjectId('65841947267f02de770fa4e2')},{$rename : {'name' : 'Good name'}}) </h1>
+<li>Here , The $rename query is used to<mark> Rename the old query into new query.</mark></li>
+<li>here, the<mark> old query is in the left side </mark>ie., <b>'name' </b> and the <mark>new query is in thr right side </mark>ie., <b> 'Good name'</b> </li>
+
+
+<h1 style="color:darkblue;">$push  - push the value to the existing property(field name) or create a new property name and push the value.</h1>
+<h1>db.users.updateOne({_id: ObjectId('65840e80267f02de770fa4e0')} ,<mark> {$push :</mark>{hobbies:"full stack , ux/ui"}})</h1>
+<li>here , the "full stack" and "ux/ui" was pushed into field hobbies.</li>
+
+
+<h1 style="color:darkblue;">$pull  - pull the value from the existing property(field name) .</h1>
+<h1>  db.users.updateOne({_id: ObjectId('65840e80267f02de770fa4e0')},{<mark>$pull :</mark> {hpbbies : "full stack , ux/ui"}})</h1>
+<li>here , the above command is used to <mark>pull(remove) </mark>the data from the document.</li>
+
+<h1 style="color:darkblue;">$unset  - It Completely delete the <mark>field name </mark>and its value.</h1>
+<h1>db.users.updateOne({_id: ObjectId('65840e80267f02de770fa4e0')},<mark> {$unset :</mark> {age : ""}})</h1>
+<li>The <mark>$unset </mark>query is used to completely delete the <mark>field name and its value</mark></li>
+
+<h1>db.users.<mark>updateMany</mark>({"address":{exists:true}} , {$unset : {"address":""}})</h1>
+<li>here the updateMany function update multiple documents simultaneously.</li>
+
+
+<h1>db.users.<mark>replaceOne</mark>({"city":"trichy"},{"name":"gautham"})</h1>
+<li>This function is used to replace the object in document.</li>
+
+<h1>db.users.<mark>deleteOne</mark>({"name":"gautham"})</h1>
+<li>deleteOne function is used to <mark>delete the particular one document</mark> in collections.</li>
+
+<h1>db.users.<mark>deleteMany</mark>({age : {$exists :false}})</h1>
+<li>here ,<mark>Delete the documents </mark>which is<mark> not consist of the the age field name.</mark></li>
+
+<h1>In deleteOne() and deleteMany() functions ,Once we can delete any document or any field ,<span style="background-color:red">we can never recovery the documents or fields.</span> </h1>
+<h1 style="border:5px solid;border-color:red;background-color:yellow;">So , before delete ,please Ensure the document is Important or not. Because It can be never recover.</h1>
+
+<h1  style="background-color:red;border:5px solid black">db.dropDatabase()</h1>
+<li>This command is used to<mark> Delete the Database.</mark></li>
+<h1 style="border:5px solid;border-color:red;background-color:yellow;">Once delete the Database , All the documents and collections are delete permanently , It can be never Recover.</h1>
+
+<h1 style="color:darkblue;">exit</h1>
+<li>This command is used to <mark>exit the Database.</mark> </li>
+
+</body>
+</html>
